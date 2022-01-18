@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "80ced932-1e40-4844-863a-fda3e825d3c1",
+		"name": "LocalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dniUser\": \"147258\",\r\n\t\"password\": \"123456\",\r\n\t\"name\": \"Prueba\",\r\n\t\"last_name\": \"\",\r\n\t\"email\": \"pb8g@mail.com\",\r\n\t\"phone\": \"9876587\",\r\n\t\"role\": \"Empresa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/create/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dniUser\":129878,\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1MDE2OTA3LCJqdGkiOiIwMzYyNTBmOGY0MzY0MzVkOTg2ZWVhNmRhZGViNDAxYSIsImRuaV91c2VyIjoxfQ.VE3_eqwNPwHCxVqf3XQ60po7vX2r7nQrrW3YDwClRM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/user/del/1/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"del",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1MDE2OTA3LCJqdGkiOiIwMzYyNTBmOGY0MzY0MzVkOTg2ZWVhNmRhZGViNDAxYSIsImRuaV91c2VyIjoxfQ.VE3_eqwNPwHCxVqf3XQ60po7vX2r7nQrrW3YDwClRM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/user/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1MDIzMDg2LCJqdGkiOiI3MjlhNTdiM2Q5NjI0Njg3YjQzMjIyNjg4OGFkMDU2MyIsImRuaV91c2VyIjo0fQ.34XuDu6iAyj--jvm47FzDpM9ySBwu6oWCNVitjRkK6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"password\": \"123456\",\r\n\t\"name\": \"cuatro\",\r\n\t\"last_name\": \"\",\r\n\t\"email\": \"cuatro@mail.com\",\r\n\t\"phone\": \"9876587\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/user/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear ruta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM0ODUwMjQ1LCJqdGkiOiJiYjM3ZTJhMjYxODE0MTc1OTJkNTZjNTJhOWJhMWEyMyIsImRuaV9Vc2VyIjoxMjk4Nzh9.QVCQQH5IrujNOtK4qlsuNyOuh5N705rgcTWD0tNhSzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_trip\": \"TR124\",\r\n    \"t_from\": \"Bogota\",\r\n    \"t_to\": \"Villavicencio\",\r\n    \"date\": \"2021-11-05 12:00\",\r\n    \"duration\": \"4:30\",\r\n    \"service\": \"Elite\",\r\n    \"rate\": 50000,\r\n    \"id_vehicle\": \"ALT-123\",\r\n    \"company\": \"Transporta\",\r\n    \"id_company\": 129878\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/route/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar rutas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1NDUyMDg2LCJqdGkiOiI2ODM2NGQ0ZjljNDQ0NmU4YjgwOTYxN2NjMzUyMTk3ZCIsImRuaV91c2VyIjo2fQ._z3lc6se7-I-5PfzULRwO-pmXGptuW-MwYhGInzdSu4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/route/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar rutas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM0ODUwMjQ1LCJqdGkiOiJiYjM3ZTJhMjYxODE0MTc1OTJkNTZjNTJhOWJhMWEyMyIsImRuaV9Vc2VyIjoxMjk4Nzh9.QVCQQH5IrujNOtK4qlsuNyOuh5N705rgcTWD0tNhSzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_trip\": \"TR123\",\r\n    \"t_from\": \"Bogota\",\r\n    \"t_to\": \"Barranquilla\",\r\n    \"date\": \"2021-11-02 18:30\",\r\n    \"duration\": \"15:30\",\r\n    \"service\": \"Premium\",\r\n    \"rate\": 95000,\r\n    \"id_vehicle\": \"ALT-123\",\r\n    \"company\": \"Transporta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/route/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar ruta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1NDU3MjAyLCJqdGkiOiIzOGJhNGQ1MzFkYTk0MmNkYTQ2ZWU5YjgwN2QwOWFhZCIsImRuaV91c2VyIjo2fQ.T5Ocq3NJKqxH8JIUt9iDsv2NfO5PmwrzI_V7F2HcJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/route/del/6-CN457/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"route",
+						"del",
+						"6-CN457",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rutas filtradas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1MzA4MjY0LCJqdGkiOiJjNGI4MzMxOTQzZmU0ZThiOWZhMjIwZDliZDE3NzEyYyIsImRuaV91c2VyIjoyNTgzNjl9.NSM-7f_R6h6HG5nY5Y0wbGdsMaOUoz6-Z96D8NGsoUE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/route/user/bogota-/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"route",
+						"user",
+						"bogota-",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear tiquete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1Mzc3NDU0LCJqdGkiOiI2NTZlZWI3NmJkNmI0ZWViYTFhNTExZmFmOWZlYWUzNiIsImRuaV91c2VyIjoyNTgzNjl9.mnY5yWJpKUFCMxJrio_28u_hNmyypOSMg-okUVmEqjY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"get_ticket\": false,\r\n    \"dni_User\": 258369,\r\n    \"id_trip\": \"TR123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/ticket/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tiquetes de usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1NDYzODkxLCJqdGkiOiIzODRiODQ1NzAwZTg0YThlYTUxZmE4NGQ2MmFhN2ZlYyIsImRuaV91c2VyIjoxNDczNjJ9.HQCuf7GZ-vv0cq18j12ZXLCHlH-GygPMN5JrUyS5oX4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/ticket/get-del/False/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"ticket",
+						"get-del",
+						"False",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar tiquete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1Mzg2MTY2LCJqdGkiOiJlMjg0N2RmODEwMjE0NDg4ODFiY2RhOTYyZGY0OGRiMCIsImRuaV91c2VyIjoyNTgzNjl9.9xED6wLjJt6xPvf-4ZerdzKG9Rlm9Rpk3NW0Ys7rkgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_ticket\": 9,\r\n    \"get_ticket\": true,\r\n    \"dni_User\":258369,\r\n    \"id_trip\": \"TR123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/ticket/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar tiquete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM1NDU3MjAyLCJqdGkiOiIzOGJhNGQ1MzFkYTk0MmNkYTQ2ZWU5YjgwN2QwOWFhZCIsImRuaV91c2VyIjo2fQ.T5Ocq3NJKqxH8JIUt9iDsv2NfO5PmwrzI_V7F2HcJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_ticket\": 8,\r\n    \"dni_User\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/ticket/get-del/dni-idticket/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"ticket",
+						"get-del",
+						"dni-idticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tiquetes por ruta (empresa)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM0ODY4ODI5LCJqdGkiOiI1ZWQyMWU3YzA4NmM0Y2FkOWI5Y2M1ODhhMTZlZWQzNyIsImRuaV91c2VyIjoxMjk4Nzh9.xuNypfW6J6W9KptCPuXvmf_cDHXJrrJuDzxUo4SpscI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookingapp-be.herokuapp.com/ticket/TR123/",
+					"protocol": "https",
+					"host": [
+						"bookingapp-be",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"ticket",
+						"TR123",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
