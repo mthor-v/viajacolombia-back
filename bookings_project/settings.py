@@ -105,10 +105,10 @@ WSGI_APPLICATION = 'bookings_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db3qu9shpe2m4c',
-        'USER': 'zrczvwtymmzuoa',
-        'PASSWORD': '53b3fe196aa375d5d5f522655038412f35c79bfca8cb7dbd54d0b6393b231187',
-        'HOST': 'ec2-3-231-194-96.compute-1.amazonaws.com',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '5432',
     }
 }

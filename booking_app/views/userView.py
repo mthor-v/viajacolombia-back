@@ -1,13 +1,15 @@
 from rest_framework import status, views
 from rest_framework.response import Response
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 from django.conf import settings
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
 #----------------
-from booking_app.serializers.userSerializer import UserSerializer
+from booking_app.serializers.userSerializer import UserSerializer, MyTokenObtainPairSerializer
 from booking_app.models.userModel import User
 
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 class UserCreateView(views.APIView):
 
     def post(self, request, *args, **kwargs):
@@ -17,7 +19,7 @@ class UserCreateView(views.APIView):
         serializer.save()
 
         tokenData = {"dniUser":request.data["dniUser"],"password":request.data["password"]}
-        tokenSerializer = TokenObtainPairSerializer(data=tokenData)
+        tokenSerializer = MyTokenObtainPairSerializer(data=tokenData)
         tokenSerializer.is_valid(raise_exception=True)
         return Response(tokenSerializer.validated_data, status=status.HTTP_201_CREATED)
 

@@ -17,13 +17,13 @@ Including another URLconf
 from django.urls import path
 from rest_framework_simplejwt.views import (
     TokenObtainPairView, TokenRefreshView)
-from booking_app.views.userView import UserCreateView, UserView
+from booking_app.views.userView import UserCreateView, UserView, MyTokenObtainPairView
 from booking_app.views.routeView import RouteView, ToUserView
 from booking_app.views.ticketView import TicketView, ToCompanyView
 
 
 urlpatterns = [
-    path('login/', TokenObtainPairView.as_view()),
+    path('login/', MyTokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
     path('create/', UserCreateView.as_view()),
     path('user/', UserView.as_view()),
